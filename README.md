@@ -28,11 +28,6 @@ Adicione etiquetas de algum lugar, como: [shields.io](https://shields.io/)
   GET /api/home
 ```
 
-| Parâmetro   | Tipo       | Descrição                           |
-| :---------- | :--------- | :---------------------------------- |
-| `api_key` | `string` | **Obrigatório**. A chave da sua API |
-
-#### Retorna um item
 
 ```http
   GET /api/vendas/${id_venda}
