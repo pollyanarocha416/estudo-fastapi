@@ -26,10 +26,8 @@ Adicione etiquetas de algum lugar, como: [shields.io](https://shields.io/)
 ```http
   GET /api/items
 ```
-| Parâmetro   | Tipo       | Descrição                                   |
-| :---------- | :--------- | :------------------------------------------ |
-| `id`      | `int` | **Obrigatório**. O ID do item |
 #### read_items()
+
 
 ```http
   GET /api/items/${id}
