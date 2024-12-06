@@ -25,19 +25,41 @@ Adicione etiquetas de algum lugar, como: [shields.io](https://shields.io/)
 #### Retorna todos os itens
 
 ```http
-  GET /api/home
-```
-
-
-```http
-  GET /api/vendas/${id_venda}
+  GET /api/items
 ```
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
+| `id`      | `int` | **Obrigatório**. O ID do item que você quer |
+
+#### read_items()
+```http
+  GET /api/items/${id}
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `id`      | `int` | **Obrigatório**. O ID do item que você quer |
+
+#### read_item(id)
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `name` | `string` | **Obrigatório**. O novo nome do item que você quer |
+| `descripition` | `string` | **Obrigatório**. A nova descrição do item |
+
+#### create_item(name, descripition)
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
 | `id`      | `string` | **Obrigatório**. O ID do item que você quer |
+| `name`      | `string` | **Obrigatório**. O novo nome do item |
+| `descripition`| `string` | **Obrigatório**. A nova descrição do item |
 
-#### pegar_venda(id_venda)
+#### update_item(id_item, name, descripition)
 
-Recebe o id da venda e retorna a venda
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+|`id_item`| `string`|**Obrigatório**. O ID do item que você quer deletar |
 
+#### delete_item(id_item)
