@@ -22,44 +22,46 @@ Adicione etiquetas de algum lugar, como: [shields.io](https://shields.io/)
 
 ## Documentação da API
 
-#### Retorna todos os itens
 
 ```http
   GET /api/items
 ```
-
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `id`      | `int` | **Obrigatório**. O ID do item |
-
 #### read_items()
+
 ```http
   GET /api/items/${id}
 ```
-
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `id`      | `int` | **Obrigatório**. O ID do item |
-
 #### read_item(id)
 
+```http
+  POST /api/items/${name}/${descripition}
+```
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `name` | `string` | **Obrigatório**. O novo nome do item |
 | `descripition` | `string` | **Obrigatório**. A nova descrição do item |
-
 #### create_item(name, descripition)
 
+```http
+  PUT /api/items/${id_item}/${name}/${descripition}
+```
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `id`      | `string` | **Obrigatório**. O ID do item |
+| `id_item`      | `string` | **Obrigatório**. O ID do item |
 | `name`      | `string` | **Obrigatório**. O novo nome do item |
 | `descripition`| `string` | **Obrigatório**. A nova descrição do item |
-
 #### update_item(id_item, name, descripition)
 
+```http
+  DELETE /api/items/${id_item}
+```
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 |`id_item`| `string`|**Obrigatório**. O ID do item |
-
 #### delete_item(id_item)
