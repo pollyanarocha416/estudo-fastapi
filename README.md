@@ -30,7 +30,7 @@ Adicione etiquetas de algum lugar, como: [shields.io](https://shields.io/)
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `id`      | `int` | **Obrigatório**. O ID do item que você quer |
+| `id`      | `int` | **Obrigatório**. O ID do item |
 
 #### read_items()
 ```http
@@ -60,6 +60,6 @@ Adicione etiquetas de algum lugar, como: [shields.io](https://shields.io/)
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-|`id_item`| `string`|**Obrigatório**. O ID do item que você quer deletar |
+|`id_item`| `string`|**Obrigatório**. O ID do item |
 
 #### delete_item(id_item)
