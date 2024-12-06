@@ -39,20 +39,20 @@ Adicione etiquetas de algum lugar, como: [shields.io](https://shields.io/)
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `id`      | `int` | **Obrigatório**. O ID do item que você quer |
+| `id`      | `int` | **Obrigatório**. O ID do item |
 
 #### read_item(id)
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `name` | `string` | **Obrigatório**. O novo nome do item que você quer |
+| `name` | `string` | **Obrigatório**. O novo nome do item |
 | `descripition` | `string` | **Obrigatório**. A nova descrição do item |
 
 #### create_item(name, descripition)
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
-| `id`      | `string` | **Obrigatório**. O ID do item que você quer |
+| `id`      | `string` | **Obrigatório**. O ID do item |
 | `name`      | `string` | **Obrigatório**. O novo nome do item |
 | `descripition`| `string` | **Obrigatório**. A nova descrição do item |
 
