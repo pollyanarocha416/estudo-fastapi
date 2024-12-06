@@ -1,7 +1,7 @@
 
-# API Forms
+# Fast API
 
-Uma api CRUD de cadastro de alunos, professores e funcionarios.
+API CRUD com fastapi
 
 
 ## Referência
@@ -25,7 +25,7 @@ Adicione etiquetas de algum lugar, como: [shields.io](https://shields.io/)
 #### Retorna todos os itens
 
 ```http
-  GET /api/items
+  GET /api/home
 ```
 
 | Parâmetro   | Tipo       | Descrição                           |
@@ -35,14 +35,14 @@ Adicione etiquetas de algum lugar, como: [shields.io](https://shields.io/)
 #### Retorna um item
 
 ```http
-  GET /api/items/${id}
+  GET /api/vendas/${id_venda}
 ```
 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `id`      | `string` | **Obrigatório**. O ID do item que você quer |
 
-#### add(num1, num2)
+#### pegar_venda(id_venda)
 
-Recebe dois números e retorna a sua soma.
+Recebe o id da venda e retorna a venda
 
