@@ -1,16 +1,12 @@
-from fastapi import FastAPI
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 import models, db
 from config import engine
+from datetime import date
 
-
-# Criar as tabelas no banco de dados
 models.Base.metadata.create_all(bind=engine)
-
 app = FastAPI()
 
-# Criar um novo item
 @app.post("/items/")
 def create_item(name: str, description: str, db: Session = Depends(db.get_db)):
     db_item = models.Item(name=name, description=description)
@@ -20,13 +16,11 @@ def create_item(name: str, description: str, db: Session = Depends(db.get_db)):
     return db_item
 
 
-# Obter todos os itens
 @app.get("/items/")
 def read_items(db: Session = Depends(db.get_db)):
     return db.query(models.Item).all()
 
 
-# Obter um item específico pelo ID
 @app.get("/items/{item_id}")
 def read_item(item_id: int, db: Session = Depends(db.get_db)):
     db_item = db.query(models.Item).filter(models.Item.id == item_id).first()
@@ -35,7 +29,6 @@ def read_item(item_id: int, db: Session = Depends(db.get_db)):
     return db_item
 
 
-# Atualizar um item existente
 @app.put("/items/{item_id}")
 def update_item(
     item_id: int, name: str, description: str, db: Session = Depends(db.get_db)
@@ -50,7 +43,6 @@ def update_item(
     return db_item
 
 
-# Excluir um item
 @app.delete("/items/{item_id}")
 def delete_item(item_id: int, db: Session = Depends(db.get_db)):
     db_item = db.query(models.Item).filter(models.Item.id == item_id).first()
@@ -59,3 +51,20 @@ def delete_item(item_id: int, db: Session = Depends(db.get_db)):
     db.delete(db_item)
     db.commit()
     return {"detail": "Item deleted"}
+
+@app.get("/clientes/{nome_cliente}")
+def get_cliente(nome_cliente:str, db:Session = Depends(db.get_db)):
+    db_cliente = db.query(models.Item).filter(models.Item.name == nome_cliente).all()
+    if db_cliente is None:
+        raise HTTPException(status_code=404, detail="Cliente não encontrado!")
+    return db_cliente
+
+
+#######################################
+@app.post("/alunos/{nome}/{idade}/{periodo}")
+def create_aluno(nome: str, idade: int, periodo:str, db: Session = Depends(db.get_db)):
+    db_aluno = models.Alunos(nome=nome, idade=idade, periodo=periodo)
+    db.add(db_aluno)
+    db.commit()
+    db.refresh(db_aluno)
+    return db_aluno
